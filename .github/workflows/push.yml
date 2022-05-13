@@ -15,7 +15,7 @@ jobs:
       - name: Run tests
         working-directory: .
         run: |
-          pwd
+          ls -lah
           make ci
 
       - name: Build & push the image
