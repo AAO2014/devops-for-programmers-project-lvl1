@@ -7,5 +7,6 @@ services:
     command: make test
     volumes:
       - "./app:/app"
+      - ".:/"
     image: avisdockerstore/devops-for-programmers-project-lvl1:latest
 
