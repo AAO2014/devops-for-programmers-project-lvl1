@@ -13,7 +13,10 @@ jobs:
     steps:   
 
       - name: Run tests
-        run: ../../make ci
+        working-directory: .
+        run: |
+          pwd
+          make ci
 
       - name: Build & push the image
         run: |
