@@ -13,8 +13,7 @@ jobs:
     steps:   
       - uses: actions/checkout@v2
       - name: Run tests      
-        run: |
-          docker run -u 1000 -it -w /root -v `pwd`/app:/root node:14.18.1 npm ci
+        run:          
           make ci
 
       - name: Build & push the image
