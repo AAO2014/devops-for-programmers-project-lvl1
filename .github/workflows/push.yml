@@ -13,10 +13,12 @@ jobs:
     steps:   
       - uses: actions/checkout@v2
       - name: Run tests      
-        run:
+        run: |
+          docker run -u 1000 -it -w /root -v `pwd`/app:/root node:14.18.1 npm ci
           make ci
 
       - name: Build & push the image
         run: |
           docker-compose -f docker-compose.yml build app
           docker-compose -f docker-compose.yml push app
+        
