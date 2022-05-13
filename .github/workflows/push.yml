@@ -16,7 +16,6 @@ jobs:
       - name: Run tests
         run: make test
 
-      # Runs a set of commands using the runners shell
       - name: Build & push the image
         run: |
           docker-compose -f docker-compose.yml build app
