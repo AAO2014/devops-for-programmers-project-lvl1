@@ -4,5 +4,3 @@
 
 Файл hexlet-check.yml отвечает за запуск этих тестов - не удаляйте этот файл, не редактируйте его и не переименовывайте репозиторий.
 
-![push](https://github.com/<OWNER>/<REPOSITORY>/actions/workflows/push.yml/badge.svg)
-
