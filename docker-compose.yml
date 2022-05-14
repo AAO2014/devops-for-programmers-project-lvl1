@@ -3,7 +3,7 @@ services:
   app:
     image: avisdockerstore/devops-for-programmers-project-lvl1:latest
     build:
-      context: .
+      context: /app
       dockerfile: Dockerfile.production
     command: make test
     volumes:
