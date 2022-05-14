@@ -2,14 +2,10 @@ name: push
 
 on:
   push:
-    branches:
-      - '**'
-    tags:
-      - '**'
 
 jobs:
   docker:
-    runs-on: node:14.18.1
+    runs-on: ubuntu-latest
     steps:   
       - uses: actions/checkout@v2
       - name: Run tests      
