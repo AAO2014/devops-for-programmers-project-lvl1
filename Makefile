@@ -18,6 +18,7 @@ compose-restart:
 	docker-compose restart
 
 setup:
+    make env-prepare
 	docker run -u 1000 -it -w /root -v `pwd`/app:/root node:14.18.1 npm ci
 
 start:
