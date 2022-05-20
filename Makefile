@@ -1,5 +1,6 @@
 env-prepare:
-	cp .env.example .env
+#	cp .env.example .env
+	echo 'hello'
 
 compose:
 	make env-prepare
