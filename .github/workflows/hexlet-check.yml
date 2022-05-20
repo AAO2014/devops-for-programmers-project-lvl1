@@ -20,9 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: copy env file
-        run:          
-          cp .env.example app/.env
 
       - name: Hexlet project check
         uses: hexlet/project-action@release
