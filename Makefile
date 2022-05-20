@@ -18,7 +18,7 @@ compose-restart:
 	docker-compose restart
 
 setup:
-    make env-prepare
+	make env-prepare
 	docker run -u 1000 -it -w /root -v `pwd`/app:/root node:14.18.1 npm ci
 
 start:
@@ -28,7 +28,7 @@ dev:
 	docker-compose up
 
 ci:
-    make env-prepare
+	make env-prepare
 	docker-compose -f docker-compose.yml up --abort-on-container-exit --exit-code-from app
 
 push:
