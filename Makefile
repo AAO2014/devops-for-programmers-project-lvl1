@@ -1,6 +1,5 @@
 env-prepare:
 	cp .env.example .env
-	cp .env.example app/.env
 
 compose:
 	make env-prepare
