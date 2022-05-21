@@ -15,7 +15,10 @@ services:
   db:
 #    env_file:
 #      - ./app/.env
-    image: postgres:12.11
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+
 
 
     
