@@ -14,7 +14,8 @@ services:
       DATABASE_PORT: $DATABASE_PORT
       DATABASE_HOST: $DATABASE_HOST
     depends_on:
-     - db
+     db:
+       condition: service_healthy
 
   db:
     image: postgres:13-alpine
@@ -27,7 +28,7 @@ services:
       DATABASE_PORT: $DATABASE_PORT
       DATABASE_HOST: $DATABASE_HOST
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U habrpguser -d habrdb"]
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
       timeout: 5s
       retries: 5
