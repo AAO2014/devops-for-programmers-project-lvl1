@@ -1,11 +1,13 @@
-version: "3"
+version: "3.4"
 services:
-
   app:
     image: avisdockerstore/devops-for-programmers-project-lvl1:latest
     build:
       context: .
       dockerfile: Dockerfile.production
+    depends_on:
+      db: 
+        condition: service_healthy
     command: make test
     environment:
       DATABASE_NAME: $DATABASE_NAME
@@ -13,20 +15,12 @@ services:
       DATABASE_PASSWORD: $DATABASE_PASSWORD
       DATABASE_PORT: $DATABASE_PORT
       DATABASE_HOST: $DATABASE_HOST
-    depends_on:
-     db:
-       condition: service_healthy
 
   db:
     image: postgres:13-alpine
     environment:
       POSTGRES_NAME: $DATABASE_NAME
       POSTGRES_PASSWORD: $DATABASE_PASSWORD
-      DATABASE_NAME: $DATABASE_NAME
-      DATABASE_USERNAME: $DATABASE_USERNAME
-      DATABASE_PASSWORD: $DATABASE_PASSWORD
-      DATABASE_PORT: $DATABASE_PORT
-      DATABASE_HOST: $DATABASE_HOST
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
