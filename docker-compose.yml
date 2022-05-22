@@ -1,4 +1,5 @@
-version: "3.4"
+version: "3.6"
+
 services:
   app:
     image: avisdockerstore/devops-for-programmers-project-lvl1:latest
@@ -6,9 +7,9 @@ services:
       context: .
       dockerfile: Dockerfile.production
     depends_on:
-      db: 
-        condition: service_healthy
-    command: make test
+      - db
+      
+    command: ["make", "test"]
     environment:
       DATABASE_NAME: $DATABASE_NAME
       DATABASE_USERNAME: $DATABASE_USERNAME
@@ -26,5 +27,5 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    restart: unless-stopped
+
 
