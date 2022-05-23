@@ -11,12 +11,17 @@ Guidance for this project, as well as JS Fasitfy Blog, were provided by Hexlet, 
 ### Requirements
 
 * Docker
+* docker-compose
 
 ### Usage
 
 Run `docker pull solxun/devops-for-programmers-project-lvl1` to pull the image. When developing locally, use `make` commands:
 
+`make setup` getting up requirements for the app
+
 `make compose` starts the app at https://localhost
+
+`make start` starts the app at https://localhost without docker-compose
 
 `make compose-build` builds the app
 
@@ -29,3 +34,6 @@ Run `docker pull solxun/devops-for-programmers-project-lvl1` to pull the image. 
 `make ci` runs tests
 
 `make push` pushes the latest version to DockerHub
+
+`make env-prepare` copy .env.example to .env
+

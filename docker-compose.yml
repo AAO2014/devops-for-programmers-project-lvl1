@@ -1,4 +1,4 @@
-version: "2.4"
+version: "3.9"
 
 services:
   app:
@@ -9,7 +9,6 @@ services:
     depends_on:
       db:
           condition: service_healthy
-    command: ["make", "test"]
     environment:
       DATABASE_NAME: $DATABASE_NAME
       DATABASE_USERNAME: $DATABASE_USERNAME
