@@ -37,3 +37,16 @@ Run `docker pull solxun/devops-for-programmers-project-lvl1` to pull the image. 
 
 `make env-prepare` copy .env.example to .env
 
+
+### Database settings
+
+For database connection you need to set up environment variables in a file *.env*:
+
+```dotenv
+DATABASE_NAME=postgres
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=postgres
+DATABASE_PORT=5432
+DATABASE_HOST=localhost
+```
+
